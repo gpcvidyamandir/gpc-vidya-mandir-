@@ -41,14 +41,18 @@ const GALLERY_DATA = [
 
   /*
   {
-    image: "images/teacher-1.jpg",
-    title: "विद्यालय परिवार",
+    image: "duvek.jpg",
+    title: "दुवेक पटेल",
     description: "Teacher & Staff",
     category: "teachers",
     categoryName: "Teachers"
   },
   */
-
+image: "duvek.jpg",
+    title: "दुवेक पटेल",
+    description: "Teacher & Staff",
+    category: "teachers",
+    categoryName: "Teachers"
 
   /* ================= MEMORIES ================= */
 
