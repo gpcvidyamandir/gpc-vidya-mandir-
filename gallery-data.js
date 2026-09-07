@@ -54,7 +54,7 @@ const GALLERY_DATA = [
     description: "Teacher & Staff",
     category: "teachers",
     categoryName: "Teachers" 
-  }
+  },
   /* ================= MEMORIES ================= */
 
   {
