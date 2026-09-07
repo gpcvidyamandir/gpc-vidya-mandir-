@@ -61,7 +61,7 @@ const GALLERY_DATA = [
     title: "भजन पटेल",
     description: "Teacher & Staff",
     category: "teachers",
-    categoryName: "Teachers" 
+    categoryName: "Teachers"
   },
   /* ================= MEMORIES ================= */
 
