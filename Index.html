@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी | Official Website</title>
+
+<meta name="description" content="घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी - गुणवत्तापूर्ण शिक्षा, संस्कार और विद्यार्थियों के उज्ज्वल भविष्य के लिए समर्पित विद्यालय।">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    color:#222;
+    background:#f7f9fc;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* TOP BAR */
+.topbar{
+    background:#071b3a;
+    color:white;
+    padding:8px 0;
+    font-size:14px;
+}
+
+.topbar .container{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+/* HEADER */
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.nav{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #f4b400;
+}
+
+.school-title{
+    font-size:19px;
+    font-weight:bold;
+    color:#092b61;
+}
+
+.school-subtitle{
+    font-size:12px;
+    color:#777;
+}
+
+.menu{
+    display:flex;
+    gap:22px;
+    list-style:none;
+    align-items:center;
+}
+
+.menu a{
+    font-weight:600;
+    color:#18345e;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#e79b00;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    min-height:600px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+    linear-gradient(rgba(4,27,61,.82),rgba(4,27,61,.82)),
+    url("https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    color:white;
+    max-width:780px;
+    padding:70px 0;
+}
+
+.badge{
+    display:inline-block;
+    background:#f4b400;
+    color:#111;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:48px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:19px;
+    max-width:700px;
+    opacity:.95;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 24px;
+    border-radius:7px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#f4b400;
+    color:#111;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:#092b61;
+}
+
+/* SECTION */
+section{
+    padding:75px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    color:#092b61;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* ABOUT */
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+}
+
+.about-image{
+    width:100%;
+    height:390px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.about h3{
+    font-size:28px;
+    color:#092b61;
+    margin-bottom:15px;
+}
+
+.about p{
+    margin-bottom:15px;
+    color:#555;
+}
+
+.check{
+    margin:10px 0;
+    font-weight:600;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+    transition:.3s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,.13);
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#092b61;
+    margin-bottom:10px;
+}
+
+/* MESSAGE */
+.message{
+    background:#eef4fb;
+}
+
+.message-box{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.07);
+    text-align:center;
+}
+
+.message-box h3{
+    color:#092b61;
+    font-size:27px;
+    margin-bottom:15px;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* NEWS */
+.news-card{
+    text-align:left;
+}
+
+.news-date{
+    color:#e79b00;
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+/* CONTACT */
+.contact{
+    background:#092b61;
+    color:white;
+}
+
+.contact .section-title h2{
+    color:white;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.contact-box{
+    background:rgba(255,255,255,.1);
+    padding:28px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.contact-box h3{
+    margin-bottom:10px;
+}
+
+.contact-box a{
+    color:#ffd25c;
+}
+
+/* FOOTER */
+footer{
+    background:#06162f;
+    color:white;
+    padding:30px 0;
+    text-align:center;
+}
+
+.footer-links{
+    margin-top:10px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    color:#ffd25c;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    z-index:2000;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+    .menu{
+        display:none;
+        position:absolute;
+        top:78px;
+        left:0;
+        right:0;
+        background:white;
+        flex-direction:column;
+        padding:20px;
+        box-shadow:0 5px 15px rgba(0,0,0,.1);
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        min-height:560px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .about,
+    .cards,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-image{
+        height:280px;
+    }
+}
+
+@media(max-width:500px){
+
+    .school-title{
+        font-size:15px;
+    }
+
+    .school-subtitle{
+        font-size:10px;
+    }
+
+    .logo{
+        width:45px;
+        height:45px;
+    }
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+<div class="container">
+<span>🎓 शिक्षा • संस्कार • सफलता</span>
+<span>📞 संपर्क करें: 70245 92100</span>
+</div>
+</div>
+
+<!-- HEADER -->
+<header>
+<div class="container nav">
+
+<div class="logo-area">
+
+<!-- बाद में यहाँ अपना school logo लगा सकते हैं -->
+<img class="logo"
+src="https://via.placeholder.com/100"
+alt="School Logo">
+
+<div>
+<div class="school-title">
+घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी
+</div>
+<div class="school-subtitle">
+विद्यालय की आधिकारिक वेबसाइट
+</div>
+</div>
+
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<ul class="menu" id="menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#facilities">Facilities</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="container">
+<div class="hero-content">
+
+<span class="badge">हमारे विद्यालय में आपका स्वागत है</span>
+
+<h1>
+ज्ञान, संस्कार और उज्ज्वल भविष्य की ओर एक कदम
+</h1>
+
+<p>
+घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी
+विद्यार्थियों को गुणवत्तापूर्ण शिक्षा के साथ
+अनुशासन, संस्कार और आत्मविश्वास प्रदान करने के लिए
+समर्पित है।
+</p>
+
+<div class="buttons">
+
+<a href="#about" class="btn btn-primary">
+विद्यालय के बारे में
+</a>
+
+<a href="#contact" class="btn btn-outline">
+संपर्क करें
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+<h2>हमारे विद्यालय के बारे में</h2>
+<p>शिक्षा के साथ संस्कार और व्यक्तित्व विकास</p>
+</div>
+
+<div class="about">
+
+<img class="about-image"
+src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80"
+alt="School Campus">
+
+<div>
+
+<h3>एक बेहतर भविष्य की नींव</h3>
+
+<p>
+घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी
+विद्यार्थियों के सर्वांगीण विकास के लिए शिक्षा,
+अनुशासन, संस्कार एवं रचनात्मक गतिविधियों पर
+विशेष ध्यान देता है।
+</p>
+
+<p>
+हमारा उद्देश्य प्रत्येक विद्यार्थी को अपनी प्रतिभा
+पहचानने और जीवन में आगे बढ़ने के लिए उचित
+मार्गदर्शन एवं अवसर प्रदान करना है।
+</p>
+
+<div class="check">✓ गुणवत्तापूर्ण शिक्षा</div>
+<div class="check">✓ अनुशासन एवं संस्कार</div>
+<div class="check">✓ विद्यार्थियों का सर्वांगीण विकास</div>
+<div class="check">✓ रचनात्मक एवं सह-पाठ्यक्रम गतिविधियाँ</div>
+
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- FACILITIES -->
+<section id="facilities">
+
+<div class="container">
+
+<div class="section-title">
+<h2>हमारी विशेषताएँ</h2>
+<p>विद्यार्थियों के विकास के लिए बेहतर वातावरण</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">📚</div>
+<h3>गुणवत्तापूर्ण शिक्षा</h3>
+<p>
+विद्यार्थियों को मजबूत शैक्षणिक आधार और
+बेहतर सीखने का वातावरण।
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>व्यक्तित्व विकास</h3>
+<p>
+आत्मविश्वास, नेतृत्व क्षमता और रचनात्मक सोच
+के विकास पर विशेष ध्यान।
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🏆</div>
+<h3>सफलता की ओर</h3>
+<p>
+विद्यार्थियों को अपनी प्रतिभा और क्षमताओं को
+निखारने के लिए प्रोत्साहित किया जाता है।
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>रचनात्मक गतिविधियाँ</h3>
+<p>
+खेल, सांस्कृतिक कार्यक्रम और विभिन्न
+सह-पाठ्यक्रम गतिविधियाँ।
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🌱</div>
+<h3>संस्कार एवं अनुशासन</h3>
+<p>
+अच्छे संस्कार और जिम्मेदार नागरिक बनने की
+दिशा में मार्गदर्शन।
+</p>
+</div>
+
+<div class="card">
+<div class="icon">👨‍🏫</div>
+<h3>मार्गदर्शन</h3>
+<p>
+विद्यार्थियों की आवश्यकताओं के अनुसार
+उचित मार्गदर्शन और सहयोग।
+</p>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- MESSAGE -->
+<section class="message">
+
+<div class="container">
+
+<div class="section-title">
+<h2>विद्यालय संदेश</h2>
+<p>हमारा संकल्प</p>
+</div>
+
+<div class="message-box">
+
+<h3>
+“शिक्षा केवल ज्ञान प्राप्त करने का माध्यम नहीं,
+बल्कि एक बेहतर इंसान बनने की यात्रा है।”
+</h3>
+
+<p>
+हमारा प्रयास है कि प्रत्येक विद्यार्थी ज्ञान,
+संस्कार, अनुशासन और आत्मविश्वास के साथ
+अपने जीवन में सफलता प्राप्त करे।
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-title">
+<h2>विद्यालय गैलरी</h2>
+<p>हमारे विद्यालय की गतिविधियों की झलक</p>
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80" alt="School Activity">
+
+<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Students">
+
+<img src="https://images.unsplash.com/photo-1560785496-3c9d27877182?auto=format&fit=crop&w=800&q=80" alt="School Event">
+
+<img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80" alt="Classroom">
+
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80" alt="Education">
+
+<img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" alt="Students Activity">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- NEWS -->
+<section id="news">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Latest News & Events</h2>
+<p>विद्यालय की नवीनतम गतिविधियाँ</p>
+</div>
+
+<div class="cards">
+
+<div class="card news-card">
+<div class="news-date">विद्यालय समाचार</div>
+<h3>विद्यालय में आपका स्वागत है</h3>
+<p>
+विद्यालय से संबंधित नवीनतम समाचार,
+कार्यक्रम और महत्वपूर्ण सूचनाएँ यहाँ
+प्रकाशित की जाएँगी।
+</p>
+</div>
+
+<div class="card news-card">
+<div class="news-date">कार्यक्रम</div>
+<h3>सांस्कृतिक एवं शैक्षणिक गतिविधियाँ</h3>
+<p>
+विद्यार्थियों के सर्वांगीण विकास के लिए
+विभिन्न गतिविधियों का आयोजन।
+</p>
+</div>
+
+<div class="card news-card">
+<div class="news-date">महत्वपूर्ण सूचना</div>
+<h3>नवीनतम Updates</h3>
+<p>
+विद्यालय की नई सूचनाएँ और announcements
+समय-समय पर यहाँ उपलब्ध कराई जाएँगी।
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+<h2>हमसे संपर्क करें</h2>
+<p>विद्यालय से संबंधित जानकारी के लिए संपर्क करें</p>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-box">
+<h3>📞 Phone</h3>
+<p>
+<a href="tel:7024592100">
+70245 92100
+</a>
+</p>
+</div>
+
+<div class="contact-box">
+<h3>💬 WhatsApp</h3>
+<p>
+<a href="https://wa.me/917024592100" target="_blank">
+WhatsApp पर संपर्क करें
+</a>
+</p>
+</div>
+
+<div class="contact-box">
+<h3>🌐 School Blog</h3>
+<p>
+<a href="http://gpcvidhyamandir.blogspot.com/" target="_blank">
+Latest School Updates
+</a>
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="container">
+
+<h3>
+घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी
+</h3>
+
+<p>
+© 2026 All Rights Reserved
+</p>
+
+<div class="footer-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+
+</footer>
+
+<!-- WHATSAPP -->
+<a class="whatsapp"
+href="https://wa.me/917024592100"
+target="_blank"
+aria-label="WhatsApp">
+💬
+</a>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+  </html>
