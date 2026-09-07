@@ -437,7 +437,284 @@ section{
     color:#23823e;
     font-size:13px;
 }
+<!-- ================= WHY CHOOSE US ================= -->
 
+<section class="why-section" id="why-us">
+
+  <div class="section-title">
+    <span>WHY CHOOSE US</span>
+    <h2>हमें क्यों चुनें?</h2>
+    <p>
+      शिक्षा के साथ संस्कार, अनुशासन और विद्यार्थियों के सर्वांगीण विकास पर हमारा विशेष ध्यान।
+    </p>
+  </div>
+
+  <div class="why-grid">
+
+    <div class="why-card">
+      <div class="why-icon">🎓</div>
+      <h3>गुणवत्तापूर्ण शिक्षा</h3>
+      <p>
+        विद्यार्थियों को मजबूत शैक्षणिक आधार देने के लिए गुणवत्तापूर्ण एवं व्यवस्थित शिक्षा।
+      </p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">👨‍🏫</div>
+      <h3>अनुभवी शिक्षक</h3>
+      <p>
+        विद्यार्थियों की क्षमता और रुचि के अनुसार मार्गदर्शन एवं व्यक्तिगत ध्यान।
+      </p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">🌱</div>
+      <h3>संस्कार एवं व्यक्तित्व विकास</h3>
+      <p>
+        शिक्षा के साथ अच्छे संस्कार, अनुशासन, आत्मविश्वास और नेतृत्व क्षमता का विकास।
+      </p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">🏆</div>
+      <h3>प्रतिभा को प्रोत्साहन</h3>
+      <p>
+        खेल, सांस्कृतिक एवं रचनात्मक गतिविधियों के माध्यम से विद्यार्थियों की प्रतिभा को बढ़ावा।
+      </p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">🔬</div>
+      <h3>व्यावहारिक शिक्षा</h3>
+      <p>
+        विद्यार्थियों में जिज्ञासा, तर्कशक्ति और सीखने की क्षमता को विकसित करने पर जोर।
+      </p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">❤️</div>
+      <h3>सुरक्षित एवं सकारात्मक वातावरण</h3>
+      <p>
+        बच्चों के सीखने और आगे बढ़ने के लिए सुरक्षित, अनुशासित और सकारात्मक वातावरण।
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ACADEMIC PROGRAMS ================= -->
+
+<section class="academic-section" id="academics">
+
+  <div class="section-title">
+    <span>ACADEMICS</span>
+    <h2>हमारी शैक्षणिक व्यवस्था</h2>
+    <p>
+      विद्यार्थियों की उम्र और आवश्यकता के अनुसार सीखने की मजबूत नींव।
+    </p>
+  </div>
+
+  <div class="academic-grid">
+
+    <div class="academic-card">
+      <div class="academic-number">01</div>
+      <h3>प्रारंभिक शिक्षा</h3>
+      <p>
+        बच्चों में सीखने की रुचि, भाषा कौशल और बुनियादी ज्ञान का विकास।
+      </p>
+    </div>
+
+    <div class="academic-card">
+      <div class="academic-number">02</div>
+      <h3>प्राथमिक शिक्षा</h3>
+      <p>
+        विषयों की मजबूत समझ के साथ पढ़ाई, लेखन, गणित और सामान्य ज्ञान पर विशेष ध्यान।
+      </p>
+    </div>
+
+    <div class="academic-card">
+      <div class="academic-number">03</div>
+      <h3>व्यक्तित्व विकास</h3>
+      <p>
+        विद्यार्थियों में आत्मविश्वास, अनुशासन, रचनात्मकता और नेतृत्व क्षमता का विकास।
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= WHY CHOOSE US CSS ================= -->
+
+<style>
+
+.why-section,
+.academic-section {
+  padding: 85px 20px;
+}
+
+.why-section {
+  background: #f7f9fc;
+}
+
+.section-title {
+  max-width: 750px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.section-title span {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.section-title h2 {
+  font-size: 38px;
+  margin: 12px 0;
+}
+
+.section-title p {
+  color: #666;
+  line-height: 1.7;
+}
+
+
+/* WHY GRID */
+
+.why-grid {
+  max-width: 1150px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.why-card {
+  background: white;
+  padding: 32px 28px;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+
+  transition: all 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.why-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: #eef4ff;
+
+  font-size: 30px;
+
+  margin-bottom: 20px;
+}
+
+.why-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.why-card p {
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* ACADEMIC */
+
+.academic-grid {
+  max-width: 1050px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.academic-card {
+  padding: 35px;
+
+  border-radius: 20px;
+
+  background: white;
+
+  border: 1px solid #eee;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+
+  transition: 0.3s;
+}
+
+.academic-card:hover {
+  transform: translateY(-7px);
+}
+
+.academic-number {
+  font-size: 42px;
+  font-weight: 900;
+
+  opacity: 0.15;
+
+  margin-bottom: 10px;
+}
+
+.academic-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.academic-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .why-section,
+  .academic-section {
+    padding: 60px 15px;
+  }
+
+  .section-title h2 {
+    font-size: 29px;
+  }
+
+  .why-grid,
+  .academic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-card,
+  .academic-card {
+    padding: 25px;
+  }
+
+}
+
+</style>
 
 /* =========================
    FOUNDER
