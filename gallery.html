@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Gallery | घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी की फोटो गैलरी, विद्यालय की गतिविधियां, कार्यक्रम और यादगार पल।">
+  <title>
+    Gallery | घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी
+  </title>
+
+  <meta
+    name="description"
+    content="घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी की फोटो गैलरी।">
 
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* ================= GALLERY PAGE ================= */
+
+    /* ================= GALLERY ================= */
 
     .gallery-intro {
       max-width: 850px;
@@ -19,158 +29,335 @@
       text-align: center;
     }
 
-    .gallery-tabs {
+    .gallery-intro p {
+      color: #666;
+      line-height: 1.8;
+    }
+
+
+    /* ================= FILTER ================= */
+
+    .gallery-filters {
+
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 10px;
-      margin: 30px 0;
+      gap: 12px;
+
+      margin: 35px 0;
+
     }
 
-    .gallery-tab {
-      border: none;
-      padding: 11px 20px;
+    .filter-btn {
+
+      border: 1px solid #ddd;
+
+      background: white;
+
+      padding: 11px 22px;
+
       border-radius: 30px;
+
       cursor: pointer;
-      font-weight: 600;
-      background: #f1f5f9;
+
+      font-size: 15px;
+
+      transition: 0.3s;
+
     }
 
-    .gallery-tab.active {
-      background: #1d4ed8;
+    .filter-btn:hover,
+    .filter-btn.active {
+
+      background: #222;
+
       color: white;
+
+      border-color: #222;
+
     }
 
-    .photo-gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+
+    /* ================= CATEGORY ================= */
+
+    .gallery-category {
+
+      margin-bottom: 65px;
+
     }
+
+    .category-heading {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 20px;
+
+      margin-bottom: 25px;
+
+      padding-bottom: 15px;
+
+      border-bottom: 1px solid #eee;
+
+    }
+
+    .category-heading h2 {
+
+      margin: 0;
+
+    }
+
+    .category-heading span {
+
+      color: #777;
+
+      font-size: 14px;
+
+    }
+
+
+    /* ================= PHOTO GRID ================= */
+
+    .photo-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+
+    }
+
+
+    /* ================= PHOTO CARD ================= */
 
     .photo-card {
+
       position: relative;
+
       overflow: hidden;
-      border-radius: 18px;
-      background: white;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+
+      border-radius: 16px;
+
+      background: #f3f3f3;
+
       cursor: pointer;
+
+      min-height: 240px;
+
     }
 
     .photo-card img {
+
       width: 100%;
+
       height: 260px;
+
       object-fit: cover;
+
       display: block;
-      transition: transform 0.4s ease;
+
+      transition:
+        transform 0.5s ease;
+
     }
 
     .photo-card:hover img {
-      transform: scale(1.06);
+
+      transform: scale(1.08);
+
     }
 
-    .photo-caption {
-      padding: 15px;
-      text-align: center;
+
+    /* ================= OVERLAY ================= */
+
+    .photo-overlay {
+
+      position: absolute;
+
+      left: 0;
+
+      right: 0;
+
+      bottom: 0;
+
+      padding: 50px 18px 18px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          transparent,
+          rgba(0,0,0,0.85)
+        );
+
     }
 
-    .photo-caption h3 {
-      margin-bottom: 5px;
+    .photo-overlay h3 {
+
+      margin: 0 0 5px;
+
+      font-size: 18px;
+
     }
 
-    .photo-caption p {
+    .photo-overlay p {
+
       margin: 0;
-      font-size: 14px;
+
+      font-size: 13px;
+
+      opacity: 0.9;
+
     }
+
+
+    /* ================= EMPTY ================= */
+
+    .empty-gallery {
+
+      text-align: center;
+
+      padding: 50px 20px;
+
+      background: #f7f7f7;
+
+      border-radius: 15px;
+
+      color: #777;
+
+    }
+
 
     /* ================= LIGHTBOX ================= */
 
     .lightbox {
+
       display: none;
+
       position: fixed;
+
       inset: 0;
-      background: rgba(0,0,0,0.90);
+
       z-index: 9999;
+
+      background:
+        rgba(0,0,0,0.93);
+
       align-items: center;
+
       justify-content: center;
+
       padding: 20px;
+
     }
 
     .lightbox.show {
+
       display: flex;
+
     }
 
     .lightbox img {
-      max-width: 92%;
+
+      max-width: 95%;
+
       max-height: 85vh;
-      border-radius: 12px;
+
       object-fit: contain;
+
+      border-radius: 10px;
+
     }
 
     .lightbox-close {
-      position: absolute;
+
+      position: fixed;
+
       top: 20px;
+
       right: 25px;
+
       color: white;
-      font-size: 38px;
+
+      font-size: 40px;
+
       cursor: pointer;
-      font-weight: bold;
+
+      z-index: 10000;
+
     }
 
-    .lightbox-title {
-      position: absolute;
-      bottom: 25px;
-      left: 20px;
-      right: 20px;
-      text-align: center;
-      color: white;
-      font-size: 17px;
-    }
+
+    /* ================= MOBILE ================= */
 
     @media (max-width: 900px) {
 
-      .photo-gallery {
-        grid-template-columns: repeat(2, 1fr);
+      .photo-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
       }
 
     }
 
     @media (max-width: 600px) {
 
-      .photo-gallery {
+      .photo-grid {
+
         grid-template-columns: 1fr;
+
       }
 
-      .photo-card img {
-        height: 240px;
+      .category-heading {
+
+        display: block;
+
+      }
+
+      .category-heading span {
+
+        display: block;
+
+        margin-top: 5px;
+
       }
 
     }
+
   </style>
 
 </head>
 
+
 <body>
 
-  <!-- ================= HEADER ================= -->
 
-  <header class="topbar">
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <div class="topbar">
 
     <div class="container">
 
-      <div class="topbar-content">
+      <span>
+        📚 ज्ञान से विकास, संस्कार से उत्कर्ष
+      </span>
 
-        <span>📚 शिक्षा • संस्कार • अनुशासन</span>
-
-        <span>📞 +91 70245 92100</span>
-
-      </div>
+      <span>
+        📞 +91 70245 92100
+      </span>
 
     </div>
 
-  </header>
+  </div>
 
-
-  <!-- ================= NAVIGATION ================= -->
 
   <nav class="navbar">
 
@@ -178,11 +365,15 @@
 
       <div class="brand">
 
-        <img src="logo.png" alt="विद्यालय का लोगो">
+        <img
+          src="logo.png"
+          alt="School Logo">
 
         <div>
 
-          <h2>घनश्याम प्रसाद चौकरया विद्या मंदिर</h2>
+          <h2>
+            घनश्याम प्रसाद चौकरया विद्या मंदिर
+          </h2>
 
           <p>सरखड़ी</p>
 
@@ -193,23 +384,43 @@
 
       <div class="nav-links">
 
-        <a href="index.html">Home</a>
+        <a href="index.html">
+          Home
+        </a>
 
-        <a href="about.html">About</a>
+        <a href="about.html">
+          About
+        </a>
 
-        <a href="academics.html">Academics</a>
+        <a href="academics.html">
+          Academics
+        </a>
 
-        <a href="facilities.html">Facilities</a>
+        <a href="facilities.html">
+          Facilities
+        </a>
 
-        <a href="founder.html">Founder</a>
+        <a href="founder.html">
+          Founder
+        </a>
 
-        <a href="gallery.html" class="active">Gallery</a>
+        <a
+          href="gallery.html"
+          class="active">
+          Gallery
+        </a>
 
-        <a href="news.html">News</a>
+        <a href="news.html">
+          News
+        </a>
 
-        <a href="admissions.html">Admissions</a>
+        <a href="admissions.html">
+          Admissions
+        </a>
 
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">
+          Contact
+        </a>
 
       </div>
 
@@ -217,662 +428,666 @@
 
   </nav>
 
+</header>
 
-  <!-- ================= PAGE HERO ================= -->
 
-  <section class="page-hero">
 
-    <div class="container">
+<!-- ================= HERO ================= -->
+
+<section class="page-hero">
+
+  <div class="container">
+
+    <span class="hero-badge">
+      PHOTO GALLERY
+    </span>
+
+    <h1>
+      विद्यालय की झलकियाँ
+    </h1>
+
+    <p>
+      विद्यालय, कार्यक्रमों, उपलब्धियों,
+      शिक्षकों और विशेष अवसरों की यादगार तस्वीरें।
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= MAIN GALLERY ================= -->
+
+<section>
+
+  <div class="container">
+
+
+    <div class="gallery-intro">
 
       <span class="hero-badge">
-        📸 SCHOOL GALLERY
+        OUR MEMORIES
       </span>
 
-      <h1>
-        हमारी यादें, हमारी तस्वीरें
-      </h1>
+      <h2>
+        हमारी यादें, हमारी उपलब्धियाँ
+      </h2>
 
       <p>
-        विद्यालय के कार्यक्रमों, गतिविधियों,
-        विद्यार्थियों और यादगार पलों की झलक।
+        विद्यालय की महत्वपूर्ण गतिविधियों और
+        कार्यक्रमों की तस्वीरें यहाँ नियमित रूप से
+        अपडेट की जाएँगी।
       </p>
 
     </div>
 
-  </section>
 
 
-  <!-- ================= INTRO ================= -->
+    <!-- ================= FILTER BUTTONS ================= -->
 
-  <section>
+    <div class="gallery-filters">
 
-    <div class="container">
+      <button
+        class="filter-btn active"
+        data-filter="all">
 
-      <div class="gallery-intro">
+        सभी
 
-        <span class="hero-badge">
-          MOMENTS THAT MATTER
-        </span>
+      </button>
 
-        <h2>
-          विद्यालय की गतिविधियों की झलक
-        </h2>
 
-        <p>
-          इस Gallery में विद्यालय से जुड़ी महत्वपूर्ण
-          तस्वीरें, कार्यक्रम, activities और विशेष
-          अवसरों की यादें समय के साथ जोड़ी जाएंगी।
-        </p>
+      <button
+        class="filter-btn"
+        data-filter="school">
 
-      </div>
+        🏫 विद्यालय
 
+      </button>
 
-      <!-- ================= FILTER ================= -->
 
-      <div class="gallery-tabs">
+      <button
+        class="filter-btn"
+        data-filter="events">
 
-        <button
-          class="gallery-tab active"
-          data-filter="all">
-          सभी
-        </button>
+        🎉 Events
 
-        <button
-          class="gallery-tab"
-          data-filter="school">
-          विद्यालय
-        </button>
+      </button>
 
-        <button
-          class="gallery-tab"
-          data-filter="events">
-          Events
-        </button>
 
-        <button
-          class="gallery-tab"
-          data-filter="memories">
-          Memories
-        </button>
+      <button
+        class="filter-btn"
+        data-filter="achievements">
 
-      </div>
+        🏆 Achievements
 
+      </button>
 
-      <!-- ================================================= -->
-      <!-- PHOTO GALLERY -->
-      <!-- ================================================= -->
 
-      <div class="photo-gallery">
+      <button
+        class="filter-btn"
+        data-filter="teachers">
 
+        👨‍🏫 Teachers
 
-        <!-- ================= SCHOOL PHOTO ================= -->
+      </button>
 
-        <div
-          class="photo-card"
-          data-category="school"
-          onclick="openLightbox(this)"
-        >
 
-          <img
-            src="logo.png"
-            alt="घनश्याम प्रसाद चौकरया विद्या मंदिर"
-          >
+      <button
+        class="filter-btn"
+        data-filter="memories">
 
-          <div class="photo-caption">
+        🕊️ Memories
 
-            <h3>
-              विद्यालय
-            </h3>
-
-            <p>
-              घनश्याम प्रसाद चौकरया विद्या मंदिर
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- ================= GHANSHYAM PHOTO ================= -->
-
-        <div
-          class="photo-card"
-          data-category="memories"
-          onclick="openLightbox(this)"
-        >
-
-          <img
-            src="ghanshyam.jpg"
-            alt="स्वर्गीय श्री घनश्याम प्रसाद चौकरया जी"
-          >
-
-          <div class="photo-caption">
-
-            <h3>
-              श्रद्धांजलि एवं स्मृति
-            </h3>
-
-            <p>
-              स्वर्गीय श्री घनश्याम प्रसाद चौकरया जी
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- ================= FOUNDER PHOTO ================= -->
-
-        <div
-          class="photo-card"
-          data-category="memories"
-          onclick="openLightbox(this)"
-        >
-
-          <img
-            src="founder.jpg"
-            alt="श्री रामकृष्ण चौकरया जी"
-          >
-
-          <div class="photo-caption">
-
-            <h3>
-              संस्थापक
-            </h3>
-
-            <p>
-              श्री रामकृष्ण चौकरया जी
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- ================= FUTURE PHOTO 1 ================= -->
-
-        <div
-          class="photo-card"
-          data-category="events"
-          onclick="openLightbox(this)"
-        >
-
-          <img
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80"
-            alt="School Event"
-          >
-
-          <div class="photo-caption">
-
-            <h3>
-              School Activities
-            </h3>
-
-            <p>
-              विद्यालय की गतिविधियां
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- ================= FUTURE PHOTO 2 ================= -->
-
-        <div
-          class="photo-card"
-          data-category="events"
-          onclick="openLightbox(this)"
-        >
-
-          <img
-            src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80"
-            alt="Students"
-          >
-
-          <div class="photo-caption">
-
-            <h3>
-              Learning Moments
-            </h3>
-
-            <p>
-              सीखने के यादगार पल
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- ================= FUTURE PHOTO 3 ================= -->
-
-        <div
-          class="photo-card"
-          data-category="school"
-          onclick="openLightbox(this)"
-        >
-
-          <img
-            src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=80"
-            alt="School Building"
-          >
-
-          <div class="photo-caption">
-
-            <h3>
-              School Environment
-            </h3>
-
-            <p>
-              विद्यालय का वातावरण
-            </p>
-
-          </div>
-
-        </div>
-
-
-      </div>
+      </button>
 
     </div>
 
-  </section>
 
 
-  <!-- ================= PHOTO UPDATE CTA ================= -->
+    <!-- ================= AUTO GALLERY ================= -->
 
-  <section>
+    <div id="gallery-container">
 
-    <div class="container">
+      <!-- JavaScript automatically creates gallery here -->
 
-      <div class="cta">
+    </div>
 
-        <span class="hero-badge">
-          GALLERY UPDATES
-        </span>
 
-        <h2>
-          नई तस्वीरें जल्द जोड़ें
-        </h2>
+  </div>
 
-        <p>
-          विद्यालय के कार्यक्रमों, उत्सवों, विद्यार्थियों
-          की activities और अन्य महत्वपूर्ण अवसरों की
-          वास्तविक तस्वीरें यहां समय-समय पर जोड़ी जा सकती हैं।
-        </p>
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="cta">
+
+      <span class="hero-badge">
+        STAY CONNECTED
+      </span>
+
+      <h2>
+        विद्यालय की नई गतिविधियों से जुड़े रहें
+      </h2>
+
+      <p>
+        नई photos, events और school updates के लिए
+        हमारे Blog और Social Media से जुड़े रहें।
+      </p>
+
+
+      <div style="margin-top:25px;">
 
         <a
-          href="contact.html"
-          class="notice-button"
-        >
-          📞 School से संपर्क करें →
+          href="http://gpcvidhyamandir.blogspot.com/"
+          target="_blank"
+          class="btn">
+
+          School Blog
+
+        </a>
+
+
+        <a
+          href="https://www.instagram.com/g.p.c_vidhya_mandir_sarkhadi?stkn=NDV6NWd6Y3VtcXJu"
+          target="_blank"
+          class="btn btn-outline">
+
+          Instagram
+
         </a>
 
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- ================= SOCIAL ================= -->
 
-  <section>
+<!-- ================= LIGHTBOX ================= -->
 
-    <div class="container">
+<div
+  class="lightbox"
+  id="lightbox"
+  onclick="closeLightbox()">
 
-      <div class="section-title">
+  <span
+    class="lightbox-close"
+    onclick="closeLightbox()">
 
-        <span>FOLLOW OUR JOURNEY</span>
+    ×
 
-        <h2>
-          Social Media पर भी जुड़ें
-        </h2>
+  </span>
+
+
+  <img
+    id="lightbox-img"
+    src=""
+    alt="Gallery Image">
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <h3>
+          घनश्याम प्रसाद चौकरया विद्या मंदिर
+        </h3>
 
         <p>
-          विद्यालय की latest photos, activities और
-          updates के लिए हमारे social platforms देखें।
+          सरखड़ी
+        </p>
+
+        <p>
+          ज्ञान से विकास, संस्कार से उत्कर्ष
         </p>
 
       </div>
 
 
-      <div class="cards">
+      <div>
 
+        <h3>
+          Quick Links
+        </h3>
 
-        <div class="card">
-
-          <div class="feature-icon">
-            📘
-          </div>
-
-          <h3>
-            Facebook
-          </h3>
-
-          <p>
-            विद्यालय की activities और updates।
-          </p>
-
-          <a
-            href="https://www.facebook.com/profile.php?id=61590847181923"
-            target="_blank"
-            rel="noopener"
-            class="notice-button"
-          >
-            Facebook देखें →
+        <p>
+          <a href="index.html">
+            Home
           </a>
+        </p>
 
-        </div>
-
-
-        <div class="card">
-
-          <div class="feature-icon">
-            📷
-          </div>
-
-          <h3>
-            Instagram
-          </h3>
-
-          <p>
-            Photos और कार्यक्रमों की झलक।
-          </p>
-
-          <a
-            href="https://www.instagram.com/g.p.c_vidhya_mandir_sarkhadi?stkn=NDV6NWd6Y3VtcXJu"
-            target="_blank"
-            rel="noopener"
-            class="notice-button"
-          >
-            Instagram देखें →
+        <p>
+          <a href="about.html">
+            About Us
           </a>
+        </p>
 
-        </div>
-
-
-        <div class="card">
-
-          <div class="feature-icon">
-            📰
-          </div>
-
-          <h3>
-            School Blog
-          </h3>
-
-          <p>
-            विद्यालय के articles और announcements।
-          </p>
-
-          <a
-            href="http://gpcvidhyamandir.blogspot.com/"
-            target="_blank"
-            rel="noopener"
-            class="notice-button"
-          >
-            Blog देखें →
+        <p>
+          <a href="academics.html">
+            Academics
           </a>
+        </p>
 
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= FOOTER ================= -->
-
-  <footer>
-
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div>
-
-          <h3>
-            घनश्याम प्रसाद चौकरया विद्या मंदिर
-          </h3>
-
-          <p>सरखड़ी</p>
-
-          <p>
-            ज्ञान से विकास, संस्कार से उत्कर्ष
-          </p>
-
-        </div>
-
-
-        <div>
-
-          <h3>
-            Quick Links
-          </h3>
-
-          <p>
-            <a href="index.html">Home</a>
-          </p>
-
-          <p>
-            <a href="about.html">About</a>
-          </p>
-
-          <p>
-            <a href="academics.html">Academics</a>
-          </p>
-
-          <p>
-            <a href="facilities.html">Facilities</a>
-          </p>
-
-        </div>
-
-
-        <div>
-
-          <h3>
-            Important
-          </h3>
-
-          <p>
-            <a href="founder.html">Founder</a>
-          </p>
-
-          <p>
-            <a href="gallery.html">Gallery</a>
-          </p>
-
-          <p>
-            <a href="news.html">News & Notices</a>
-          </p>
-
-          <p>
-            <a href="admissions.html">Admissions</a>
-          </p>
-
-        </div>
-
-
-        <div>
-
-          <h3>
+        <p>
+          <a href="contact.html">
             Contact
-          </h3>
-
-          <p>
-            📞 +91 70245 92100
-          </p>
-
-          <p>
-            📍 सरखड़ी
-          </p>
-
-          <p>
-            <a
-              href="https://wa.me/917024592100"
-              target="_blank"
-            >
-              WhatsApp पर संपर्क करें
-            </a>
-          </p>
-
-        </div>
+          </a>
+        </p>
 
       </div>
 
 
-      <div class="copyright">
+      <div>
 
-        © <span data-year></span>
-        घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी.
-        All Rights Reserved.
+        <h3>
+          Explore
+        </h3>
+
+        <p>
+          <a href="founder.html">
+            Founder
+          </a>
+        </p>
+
+        <p>
+          <a href="gallery.html">
+            Gallery
+          </a>
+        </p>
+
+        <p>
+          <a href="news.html">
+            News
+          </a>
+        </p>
+
+        <p>
+          <a href="admissions.html">
+            Admissions
+          </a>
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Contact
+        </h3>
+
+        <p>
+          📞 +91 70245 92100
+        </p>
+
+        <p>
+          📍 सरखड़ी
+        </p>
 
       </div>
 
     </div>
 
-  </footer>
 
+    <div class="copyright">
 
-  <!-- ================= WHATSAPP ================= -->
+      © <span data-year></span>
 
-  <a
-    href="https://wa.me/917024592100"
-    class="whatsapp"
-    target="_blank"
-    rel="noopener"
-    aria-label="WhatsApp"
-  >
-    WhatsApp
-  </a>
+      घनश्याम प्रसाद चौकरया विद्या मंदिर सरखड़ी.
 
+      All Rights Reserved.
 
-  <!-- ================= LIGHTBOX ================= -->
-
-  <div
-    class="lightbox"
-    id="lightbox"
-    onclick="closeLightbox()"
-  >
-
-    <span class="lightbox-close">
-      ×
-    </span>
-
-    <img
-      id="lightboxImage"
-      src=""
-      alt="Gallery Image"
-    >
-
-    <div
-      class="lightbox-title"
-      id="lightboxTitle">
     </div>
 
   </div>
 
-
-  <!-- ================= GALLERY SCRIPT ================= -->
-
-  <script>
-
-    function openLightbox(card) {
-
-      const image = card.querySelector("img");
-
-      const title = card.querySelector("h3");
-
-      document.getElementById("lightboxImage").src = image.src;
-
-      document.getElementById("lightboxTitle").textContent =
-        title ? title.textContent : "";
-
-      document
-        .getElementById("lightbox")
-        .classList.add("show");
-
-    }
+</footer>
 
 
-    function closeLightbox() {
 
-      document
-        .getElementById("lightbox")
-        .classList.remove("show");
+<!-- ================= WHATSAPP ================= -->
 
-    }
+<a
+  href="https://wa.me/917024592100"
+  class="whatsapp"
+  target="_blank"
+  aria-label="WhatsApp">
 
+  💬
 
-    /* ================= FILTER ================= */
-
-    const tabs =
-      document.querySelectorAll(".gallery-tab");
-
-    const photos =
-      document.querySelectorAll(".photo-card");
+</a>
 
 
-    tabs.forEach(function(tab) {
 
-      tab.addEventListener("click", function() {
+<!-- ================= SCRIPTS ================= -->
 
-        tabs.forEach(function(item) {
-          item.classList.remove("active");
-        });
+<script src="script.js"></script>
 
-        tab.classList.add("active");
-
-        const filter =
-          tab.getAttribute("data-filter");
+<script src="gallery-data.js"></script>
 
 
-        photos.forEach(function(photo) {
+<script>
 
-          const category =
-            photo.getAttribute("data-category");
+  const galleryContainer =
+    document.getElementById(
+      "gallery-container"
+    );
 
 
-          if (
-            filter === "all" ||
-            filter === category
-          ) {
+  const filterButtons =
+    document.querySelectorAll(
+      ".filter-btn"
+    );
 
-            photo.style.display = "block";
 
-          } else {
+  /* ================= RENDER ================= */
 
-            photo.style.display = "none";
+  function renderGallery(filter = "all") {
+
+    galleryContainer.innerHTML = "";
+
+
+    const categories = {
+
+      school: {
+        title: "🏫 विद्यालय",
+        subtitle: "School & Campus"
+      },
+
+      events: {
+        title: "🎉 Events & Celebrations",
+        subtitle: "विद्यालय के कार्यक्रम"
+      },
+
+      achievements: {
+        title: "🏆 Achievements",
+        subtitle: "उपलब्धियाँ एवं सम्मान"
+      },
+
+      teachers: {
+        title: "👨‍🏫 Teachers & Staff",
+        subtitle: "शिक्षक एवं विद्यालय परिवार"
+      },
+
+      memories: {
+        title: "🕊️ Founder & Legacy",
+        subtitle: "विद्यालय की प्रेरणा एवं विरासत"
+      }
+
+    };
+
+
+    const selectedCategories =
+      filter === "all"
+        ? Object.keys(categories)
+        : [filter];
+
+
+    selectedCategories.forEach(category => {
+
+      const photos =
+        GALLERY_DATA.filter(
+          item => item.category === category
+        );
+
+
+      if (photos.length === 0) {
+        return;
+      }
+
+
+      const categoryInfo =
+        categories[category];
+
+
+      const categorySection =
+        document.createElement("div");
+
+
+      categorySection.className =
+        "gallery-category";
+
+
+      categorySection.innerHTML = `
+
+        <div class="category-heading">
+
+          <h2>
+            ${categoryInfo.title}
+          </h2>
+
+          <span>
+            ${categoryInfo.subtitle}
+          </span>
+
+        </div>
+
+        <div class="photo-grid"></div>
+
+      `;
+
+
+      const photoGrid =
+        categorySection.querySelector(
+          ".photo-grid"
+        );
+
+
+      photos.forEach(photo => {
+
+        const card =
+          document.createElement("div");
+
+
+        card.className =
+          "photo-card";
+
+
+        card.innerHTML = `
+
+          <img
+            src="${photo.image}"
+            alt="${photo.title}"
+            loading="lazy">
+
+          <div class="photo-overlay">
+
+            <h3>
+              ${photo.title}
+            </h3>
+
+            <p>
+              ${photo.description}
+            </p>
+
+          </div>
+
+        `;
+
+
+        const image =
+          card.querySelector("img");
+
+
+        image.addEventListener(
+          "click",
+          function(event) {
+
+            event.stopPropagation();
+
+            openLightbox(
+              photo.image
+            );
 
           }
+        );
 
-        });
+
+        photoGrid.appendChild(card);
 
       });
+
+
+      galleryContainer.appendChild(
+        categorySection
+      );
 
     });
 
 
-    /* Prevent lightbox closing when clicking image */
+    if (
+      galleryContainer.children.length === 0
+    ) {
 
-    document
-      .getElementById("lightboxImage")
-      .addEventListener("click", function(event) {
+      galleryContainer.innerHTML = `
 
-        event.stopPropagation();
+        <div class="empty-gallery">
 
-      });
+          <h3>
+            📸 अभी इस category में photos उपलब्ध नहीं हैं
+          </h3>
 
-  </script>
+          <p>
+            नई photos जल्द ही यहाँ जोड़ी जाएँगी।
+          </p>
+
+        </div>
+
+      `;
+
+    }
+
+  }
 
 
-  <script src="script.js"></script>
+  /* ================= FILTER ================= */
+
+  filterButtons.forEach(button => {
+
+    button.addEventListener(
+      "click",
+      function() {
+
+        filterButtons.forEach(btn => {
+
+          btn.classList.remove(
+            "active"
+          );
+
+        });
+
+
+        this.classList.add("active");
+
+
+        const filter =
+          this.getAttribute(
+            "data-filter"
+          );
+
+
+        renderGallery(filter);
+
+      }
+    );
+
+  });
+
+
+  /* ================= LIGHTBOX ================= */
+
+  function openLightbox(imageSrc) {
+
+    const lightbox =
+      document.getElementById(
+        "lightbox"
+      );
+
+
+    const image =
+      document.getElementById(
+        "lightbox-img"
+      );
+
+
+    image.src = imageSrc;
+
+
+    lightbox.classList.add(
+      "show"
+    );
+
+
+    document.body.style.overflow =
+      "hidden";
+
+  }
+
+
+  function closeLightbox() {
+
+    const lightbox =
+      document.getElementById(
+        "lightbox"
+      );
+
+
+    lightbox.classList.remove(
+      "show"
+    );
+
+
+    document.body.style.overflow =
+      "";
+
+  }
+
+
+  /* ================= ESC ================= */
+
+  document.addEventListener(
+    "keydown",
+    function(event) {
+
+      if (
+        event.key === "Escape"
+      ) {
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+
+
+  /* ================= START ================= */
+
+  renderGallery("all");
+
+</script>
+
 
 </body>
+
 </html>
