@@ -55,6 +55,13 @@ const GALLERY_DATA = [
     category: "teachers",
     categoryName: "Teachers" 
   },
+  {
+    image: "images/bhajan.jpg",
+    title: "भजन पटेल",
+    description: "Teacher & Staff",
+    category: "teachers",
+    categoryName: "Teachers" 
+  },
   /* ================= MEMORIES ================= */
 
   {
