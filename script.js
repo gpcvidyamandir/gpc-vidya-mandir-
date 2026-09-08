@@ -275,3 +275,70 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+// =====================================================
+// PROFESSIONAL ANNOUNCEMENT SYSTEM
+// =====================================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const banner = document.getElementById("school-announcement");
+
+    // Banner मौजूद नहीं है तो कुछ न करें
+    if (!banner) return;
+
+    // Announcement data मौजूद है तो उससे content भरें
+    if (typeof ANNOUNCEMENT !== "undefined") {
+
+        document.getElementById("announcementBadge").textContent =
+            ANNOUNCEMENT.badge;
+
+        document.getElementById("announcementTitle").textContent =
+            ANNOUNCEMENT.title;
+
+        document.getElementById("announcementDescription").textContent =
+            ANNOUNCEMENT.description;
+
+        document.getElementById("announcementHighlight").textContent =
+            ANNOUNCEMENT.highlight;
+
+        const primaryButton =
+            document.getElementById("announcementPrimary");
+
+        primaryButton.textContent =
+            ANNOUNCEMENT.primaryButton.text;
+
+        primaryButton.href =
+            ANNOUNCEMENT.primaryButton.link;
+
+        const secondaryButton =
+            document.getElementById("announcementSecondary");
+
+        secondaryButton.textContent =
+            ANNOUNCEMENT.secondaryButton.text;
+
+        secondaryButton.href =
+            ANNOUNCEMENT.secondaryButton.link;
+
+        // show:false होने पर banner hide करें
+        if (ANNOUNCEMENT.show === false) {
+            banner.style.display = "none";
+        }
+    }
+
+});
+
+
+// =====================================================
+// CLOSE ANNOUNCEMENT
+// =====================================================
+
+function closeAnnouncement() {
+
+    const banner =
+        document.getElementById("school-announcement");
+
+    if (banner) {
+        banner.style.display = "none";
+    }
+
+}
