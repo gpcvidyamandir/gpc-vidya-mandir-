@@ -215,3 +215,63 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
+// ================= ADMISSION ENQUIRY FORM =================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const forms = document.querySelectorAll("#admissionEnquiryForm");
+
+  forms.forEach(function (form) {
+
+    form.addEventListener("submit", function (e) {
+
+      e.preventDefault();
+
+      const submitButton = form.querySelector(".enquiry-submit");
+
+      submitButton.disabled = true;
+      submitButton.innerText = "⏳ Submitting...";
+
+      const formData = {
+        parentName: document.getElementById("parentName").value,
+        studentName: document.getElementById("studentName").value,
+        mobile: document.getElementById("mobile").value,
+        admissionClass: document.getElementById("class").value,
+        location: document.getElementById("location").value,
+        message: document.getElementById("message").value
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbyvG3s07748UGrkoSWc5hYdDGXd1cX4Q4Y7uxmbM67PjldemibaNG3yR2H3VJ8lkivM/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(function () {
+
+        alert("✅ आपकी Admission Enquiry सफलतापूर्वक भेज दी गई है। विद्यालय की टीम जल्द आपसे संपर्क करेगी।");
+
+        form.reset();
+
+        submitButton.disabled = false;
+        submitButton.innerText = "📩 Submit Admission Enquiry";
+
+      })
+      .catch(function (error) {
+
+        alert("❌ Enquiry भेजने में समस्या हुई। कृपया दोबारा प्रयास करें।");
+
+        submitButton.disabled = false;
+        submitButton.innerText = "📩 Submit Admission Enquiry";
+
+        console.error(error);
+      });
+
+    });
+
+  });
+
+});
